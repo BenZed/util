@@ -3,6 +3,8 @@ import { Func, isObject } from '@benzed/types'
 
 import { memoize, Memoized } from './memoize'
 
+//// TODO: decorator or delete ////
+
 //// EsLint ////
 
 /* eslint-disable 
@@ -43,6 +45,9 @@ function provide<F extends Func, C extends object>(
     ctx: C,
     provider: Provider<F, C>
 ): F
+/**
+ * @deprecated Going to turn this into a decorator
+ */
 function provide(...args: [Provider] | [unknown, Provider]): Func {
     const isWithContextSignature = args.length === 2
     if (!isWithContextSignature) {

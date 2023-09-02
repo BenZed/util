@@ -1,10 +1,12 @@
 import { PrivateState } from './classes/private-state'
 import { GenericObject } from '@benzed/types'
 
+//// TODO: turn this into a @decorator ////
+
 //// Main ////
 
 /**
- * get a lazily initialized value for an object
+ * @deprecated Going to turn this into a decorator
  */
 function lazy<T>(object: object, key: PropertyKey, initializer: () => T): T {
     const lazyState = PrivateState.for(lazy)

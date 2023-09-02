@@ -2,6 +2,8 @@ import { NestedMap } from './classes'
 import { Func, isFunc, isRecordOf, isString } from '@benzed/types'
 import { define } from './define'
 
+//// TODO turn this into a @decorator ////
+
 // Helper
 
 /**
@@ -49,6 +51,7 @@ export function memoize<F extends Func>(
 
 /**
  * get a method that caches it's output based in the identicality of it's arguments
+ * @deprecated going to turn this into a decorator
  */
 export function memoize(...args: unknown[]): unknown {
     // Memoize a record
